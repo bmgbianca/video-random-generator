@@ -39,7 +39,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 120vh;
+  min-height: 100vh;
 }
 
 .videoDiv {
@@ -48,18 +48,36 @@
   flex-direction: column;
 }
 
-.displayIntro {
-  width: 613px;
-  height: 465px;
+.divIframe {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;
+}
+
+.displayIntro,
+.divIframe {
+  z-index: 10;
+  width: 44%;
+  height: 30%;
+  margin-left: 20.3%;
+  margin-top: 5.7%;
+}
+
+.display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 99.2%;
+  height: 32%;
+  z-index: 10;
 }
 
 .display,
 .displayIntro {
-  margin-left: 20.7%;
-  margin-top: 5.5%;
-  z-index: 10;
   border: 3px solid #49191b;
-  border-radius: 3%;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .hidden {
@@ -69,13 +87,13 @@
 .tvBorder {
   position: absolute;
   margin-top: 1%;
-  width: 1000px;
+  width: 70%;
   align-self: center;
   z-index: 0;
 }
 
 .buttonContainer {
-  margin-top: 14%;
+  padding-top: 3%;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -96,4 +114,51 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .buttonContainer {
+    padding-top: 5%;
+  }
+
+  .videoDiv {
+    padding-top: 6%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .buttonContainer {
+    padding-top: 8%;
+  }
+
+  .videoDiv {
+    padding-top: 13%;
+  }
+  .displayIntro,
+  .divIframe {
+    width: 53%;
+    height: 33%;
+    margin-left: 13.5%;
+    margin-top: 6.9%;
+  }
+
+  .display {
+    height: 38%;
+  }
+
+  .tvBorder {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .buttonContainer {
+    padding-top: 13%;
+  }
+
+  .backButton {
+    font-size: 1.8rem;
+    padding: 0 1.2rem 0 1.2rem;
+  }
+
+  .videoDiv {
+    padding-top: 20%;
+  }
 }

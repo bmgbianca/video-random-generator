@@ -74,6 +74,11 @@ export default function VideoPage() {
 
   return (
     <main className="mainBackground">
+      <Link className="buttonContainer" to="/random-generator">
+        <button onClick={handlePreviousPage} className="backButton">
+          VOLTAR PARA A ROLETA!
+        </button>
+      </Link>
       <div className="videoDiv">
         <img src="./tv.png" alt="tv_border" className="tvBorder" />
         <video
@@ -83,23 +88,20 @@ export default function VideoPage() {
           src="./teve.mov"
           autoPlay
         ></video>
-        <iframe
-          className={mainVideoClass}
-          title="video"
-          width="615"
-          height="465"
-          src={videoLink}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          autoplay
-        ></iframe>
+        <div className="divIframe">
+          <iframe
+            className={mainVideoClass}
+            title="video"
+            width="100%"
+            height="100%"
+            src={videoLink}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            autoPlay
+          ></iframe>
+        </div>
       </div>
-      <Link className="buttonContainer" to="/random-generator">
-        <button onClick={handlePreviousPage} className="backButton">
-          VOLTAR PARA A ROLETA!
-        </button>
-      </Link>
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './RandomGeneratorPage.module.css';
 import { useHistory } from 'react-router-dom';
 
@@ -7,18 +7,6 @@ export default function RandomGenertorPage() {
   const [img2Class, setImg2Class] = useState(css.wheelContent);
 
   const history = useHistory();
-  const videosArray = [
-    'https://www.youtube.com/embed/gt3fEn1eklY',
-    'https://www.youtube.com/embed/vGT0X0D0o-g',
-    'https://www.youtube.com/embed/Ju37Y1F4ylc',
-    'https://www.youtube.com/embed/nQ5eUJNXrMw',
-    'https://www.youtube.com/embed/x-1-gLv3aWs',
-    'https://www.youtube.com/embed/S3G89K84p20',
-    'https://www.youtube.com/embed/4lmEdjRK1hM',
-    'https://www.youtube.com/embed/p-rSdt0aFuw',
-    'https://www.youtube.com/embed/YlaWGd1cUms',
-    'https://www.youtube.com/embed/j1GMYDAeyDM',
-  ];
 
   const stopTheWheel = () => {
     setImg1Class(css.fadeImg1);
@@ -30,6 +18,12 @@ export default function RandomGenertorPage() {
     }, 2000);
   };
 
+  useEffect(() => {
+    const audio1 = document.getElementById('soundtrack');
+    return () => {
+      audio1.pause();
+    };
+  });
   return (
     <div className={css.background}>
       <h1 className={css.titulo}>
